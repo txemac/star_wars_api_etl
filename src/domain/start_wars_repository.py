@@ -46,3 +46,16 @@ class StartWarsRepository(ABC):
         :return: list of characters
         """
         pass
+
+    @abstractmethod
+    def get_specie_name_by_id(
+        self,
+        specie_id: int,
+    ) -> str:
+        """
+        Get a persisted specie by ID
+
+        :param specie_id: ID of the specie
+        :return: specie name
+        """
+        pass

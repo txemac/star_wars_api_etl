@@ -1,4 +1,6 @@
 from src.infrastructure.adapters.start_wars_api_adapter import StartWarsAPIAdapter
+from src.infrastructure.serializers.character_serializer import CharacterSerializer
+from src.utils import csv_generator
 
 start_wars_api = StartWarsAPIAdapter()
 
@@ -13,11 +15,24 @@ characters_sorted_by_appearances = start_wars_api.sort_characters_by_appearances
     characters=characters,
     limit=10,
 )
-print(f"Step 1: Finish. Winner: {characters_sorted_by_appearances[0].name}")
+print(f"Step 1: Finish. Winner: {characters_sorted_by_appearances[0].name}\n")
 
 print("Step 2: Sort those ten characters by height in descending order (i.e., tallest first) -> Starting...")
 characters_sorted_by_height = start_wars_api.sort_characters_taller(
     characters=characters_sorted_by_appearances,
     limit=10,
 )
-print(f"Step 2: Finish. Taller between most appearances: {characters_sorted_by_height[0].name}")
+print(f"Step 2: Finish. Taller between most appearances: {characters_sorted_by_height[0].name}\n")
+
+print("Step 3: Produce a CSV with the following columns: name, species, height, appearances -> preparing data...")
+for character in characters_sorted_by_height:
+    if character.specie:
+        character.specie.name = start_wars_api.get_specie_name_by_id(specie_id=character.specie.id)
+
+print("Step 3: Generating csv...")
+csv_generator.create(
+    path="file.csv",
+    headers=["name", "species", "height", "appearances"],
+    items=CharacterSerializer.serialize_list(item_list=characters_sorted_by_height),
+)
+print("Step 3: CSV file generated\n")

@@ -42,6 +42,13 @@ Step 0: Finish. Total characters: 82
 
 Step 1: Find the ten characters who appear in the most Star Wars films -> Starting...
 Step 1: Finish. Winner: C-3PO
+
+Step 2: Sort those ten characters by height in descending order (i.e., tallest first) -> Starting...
+Step 2: Finish. Taller between most appearances: Chewbacca
+
+Step 3: Produce a CSV with the following columns: name, species, height, appearances -> preparing data...
+Step 3: Generating csv...
+Step 3: CSV file generated
 ```
 
 ## Tests
@@ -53,15 +60,17 @@ pytest -vvv
 ```text
 (env) % pytest -vvv
 ============================= test session starts ==============================
-collecting ... collected 7 items
+collecting ... collected 9 items
 
-test_main.py::test_sort_by_appearances PASSED                            [ 14%]
-test_main.py::test_sort_by_height PASSED                                 [ 28%]
-infrastructure/adapters/test_start_wars_api_adapter.py::test_sort_characters_by_appearances_ok PASSED [ 42%]
-infrastructure/adapters/test_start_wars_api_adapter.py::test_sort_characters_by_appearances_with_limit PASSED [ 57%]
-infrastructure/adapters/test_start_wars_api_adapter.py::test_sort_characters_taller_ok PASSED [ 71%]
-infrastructure/adapters/test_start_wars_api_adapter.py::test_sort_characters_taller_with_limit PASSED [ 85%]
+test_main.py::test_sort_by_appearances PASSED                            [ 11%]
+test_main.py::test_sort_by_height PASSED                                 [ 22%]
+test_main.py::test_csv_file PASSED                                       [ 33%]
+infrastructure/adapters/test_start_wars_api_adapter.py::test_sort_characters_by_appearances_ok PASSED [ 44%]
+infrastructure/adapters/test_start_wars_api_adapter.py::test_sort_characters_by_appearances_with_limit PASSED [ 55%]
+infrastructure/adapters/test_start_wars_api_adapter.py::test_sort_characters_taller_ok PASSED [ 66%]
+infrastructure/adapters/test_start_wars_api_adapter.py::test_sort_characters_taller_with_limit PASSED [ 77%]
+infrastructure/serializers/test_character_serializer.py::test_character_serializer PASSED [ 88%]
 infrastructure/transforms/test_start_wars_api_character.py::test_transform PASSED [100%]
 
-============================== 7 passed in 0.02s ===============================
+============================== 9 passed in 0.03s ===============================
 ```
