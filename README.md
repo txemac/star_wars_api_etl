@@ -2,7 +2,7 @@
 
 Task using the Star Wars API (swapi)
 
-[![CI](https://github.com/txemac/start_wars_api_etl/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/txemac/start_wars_api_etl/actions/workflows/ci.yml)
+[![CI](https://github.com/txemac/star_wars_api_etl/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/txemac/star_wars_api_etl/actions/workflows/ci.yml)
 
 # Run
 
@@ -23,7 +23,7 @@ source env/bin/activate
 ```shell
 pip install --upgrade pip setuptools wheel
 pip install -r requirements.txt
-pip install -r test-requirements.txt 
+pip install -r test-requirements.txt
 ```
 
 - run
@@ -35,7 +35,7 @@ python3 main.py
 ## Output
 
 ```text
-Hello! Welcome to Start Wars API ETL
+Hello! Welcome to Star Wars API ETL
 
 Step 0: Get all characters from external API -> Starting...
 Step 0: Finish. Total characters: 82
@@ -75,5 +75,5 @@ infrastructure/adapters/test_start_wars_api_adapter.py::test_sort_characters_tal
 infrastructure/serializers/test_character_serializer.py::test_character_serializer PASSED [ 88%]
 infrastructure/transforms/test_start_wars_api_character.py::test_transform PASSED [100%]
 
-============================== 9 passed in 0.03s ===============================
+============================== 9 passed in 0.04s ===============================
 ```

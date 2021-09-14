@@ -5,17 +5,17 @@ import pytest as pytest
 
 from src.domain.character import Character
 from src.domain.specie import Specie
-from src.domain.start_wars_repository import StartWarsRepository
-from src.infrastructure.adapters.start_wars_api_adapter import StartWarsAPIAdapter
+from src.domain.star_wars_repository import StarWarsRepository
+from src.infrastructure.adapters.star_wars_api_adapter import StarWarsAPIAdapter
 
 
 @pytest.fixture
-def start_wars_repository() -> StartWarsRepository:
-    return StartWarsAPIAdapter()
+def star_wars_repository() -> StarWarsRepository:
+    return StarWarsAPIAdapter()
 
 
 @pytest.fixture
-def start_wars_api_character_1() -> Dict:
+def star_wars_api_character_1() -> Dict:
     return {
         "name": "Luke Skywalker",
         "height": "172",

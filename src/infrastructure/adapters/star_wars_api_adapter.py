@@ -5,11 +5,11 @@ import requests
 from src import settings
 from src.domain.character import Character
 from src.domain.specie import Specie
-from src.domain.start_wars_repository import StartWarsRepository
-from src.infrastructure.transforms.start_wars_api_character_transform import StartWarsAPICharacterTransform
+from src.domain.star_wars_repository import StarWarsRepository
+from src.infrastructure.transforms.star_wars_api_character_transform import StarWarsAPICharacterTransform
 
 
-class StartWarsAPIAdapter(StartWarsRepository):
+class StarWarsAPIAdapter(StarWarsRepository):
 
     def get_characters(
         self,
@@ -26,7 +26,7 @@ class StartWarsAPIAdapter(StartWarsRepository):
             ).json()
             result += response_json["results"]
 
-        return StartWarsAPICharacterTransform.transform_list(item_list=result)
+        return StarWarsAPICharacterTransform.transform_list(item_list=result)
 
     def sort_characters_by_appearances(
         self,

@@ -1,12 +1,12 @@
 from src.infrastructure.adapters.httpbin_adapter import HTTPBinAdapter
-from src.infrastructure.adapters.start_wars_api_adapter import StartWarsAPIAdapter
+from src.infrastructure.adapters.star_wars_api_adapter import StarWarsAPIAdapter
 from src.infrastructure.serializers.character_serializer import CharacterSerializer
 from src.utils import csv_generator
 
-start_wars_api = StartWarsAPIAdapter()
+start_wars_api = StarWarsAPIAdapter()
 httpbin_api = HTTPBinAdapter()
 
-print("Hello! Welcome to Start Wars API ETL\n")
+print("Hello! Welcome to Star Wars API ETL\n")
 
 print("Step 0: Get all characters from external API -> Starting...")
 characters = start_wars_api.get_characters()

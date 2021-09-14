@@ -1,14 +1,14 @@
 from typing import Dict
 
 from src.domain.character import Character
-from src.infrastructure.transforms.start_wars_api_character_transform import StartWarsAPICharacterTransform
+from src.infrastructure.transforms.star_wars_api_character_transform import StarWarsAPICharacterTransform
 from tests.utils import assert_dicts
 
 
 def test_transform(
-    start_wars_api_character_1: Dict,
+    star_wars_api_character_1: Dict,
 ) -> None:
-    result = StartWarsAPICharacterTransform.transform(start_wars_api_character=start_wars_api_character_1)
+    result = StarWarsAPICharacterTransform.transform(star_wars_api_character=star_wars_api_character_1)
     assert isinstance(result, Character)
     expected = dict(
         name="Luke Skywalker",

@@ -5,11 +5,11 @@ from typing import List
 from src.domain.character import Character
 
 
-class StartWarsRepository(ABC):
+class StarWarsRepository(ABC):
     @abstractmethod
     def get_characters(self) -> List[Character]:
         """
-        Get all character from Start Wars API
+        Get all character from Star Wars API
 
         :return: list of character
         """
@@ -53,7 +53,7 @@ class StartWarsRepository(ABC):
         specie_id: int,
     ) -> str:
         """
-        Get a persisted specie by ID
+        Get a persisted specie name by specie ID from Star Wars API
 
         :param specie_id: ID of the specie
         :return: specie name
