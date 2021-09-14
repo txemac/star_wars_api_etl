@@ -49,6 +49,9 @@ Step 2: Finish. Taller between most appearances: Chewbacca
 Step 3: Produce a CSV with the following columns: name, species, height, appearances -> preparing data...
 Step 3: Generating csv...
 Step 3: CSV file generated
+
+Step 4: Send the CSV to httpbin.org -> Sending...
+Step 4: Upload CSV file success
 ```
 
 ## Tests

@@ -1,8 +1,10 @@
+from src.infrastructure.adapters.httpbin_adapter import HTTPBinAdapter
 from src.infrastructure.adapters.start_wars_api_adapter import StartWarsAPIAdapter
 from src.infrastructure.serializers.character_serializer import CharacterSerializer
 from src.utils import csv_generator
 
 start_wars_api = StartWarsAPIAdapter()
+httpbin_api = HTTPBinAdapter()
 
 print("Hello! Welcome to Start Wars API ETL\n")
 
@@ -36,3 +38,10 @@ csv_generator.create(
     items=CharacterSerializer.serialize_list(item_list=characters_sorted_by_height),
 )
 print("Step 3: CSV file generated\n")
+
+print("Step 4: Send the CSV to httpbin.org -> Sending...")
+send_file = httpbin_api.send_file(path="file.csv")
+if send_file is True:
+    print("Step 4: Upload CSV file success")
+else:
+    print("Step 4: ERROR uploading CSV file")
