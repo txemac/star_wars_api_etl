@@ -30,3 +30,19 @@ class StartWarsRepository(ABC):
         :return: list of characters
         """
         pass
+
+    @abstractmethod
+    def sort_characters_taller(
+        self,
+        characters: List[Character],
+        limit: int = 10,
+    ) -> List[Character]:
+        """
+        Sort a list of characters by height.
+        Order by taller.
+
+        :param characters: characters
+        :param limit: max of items at result
+        :return: list of characters
+        """
+        pass

@@ -13,5 +13,6 @@ def test_transform(
     expected = dict(
         name="Luke Skywalker",
         appearances=4,
+        height=172,
     )
     assert_dicts(original=result.__dict__, expected=expected)

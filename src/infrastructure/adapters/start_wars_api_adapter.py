@@ -35,3 +35,12 @@ class StartWarsAPIAdapter(StartWarsRepository):
         result = sorted(characters, key=lambda c: int(c["appearances"]), reverse=True)
 
         return result[:limit]
+
+    def sort_characters_taller(
+        self,
+        characters: List[Character],
+        limit: int = 10,
+    ) -> List[Character]:
+        result = sorted(characters, key=lambda c: int(c["height"]), reverse=True)
+
+        return result[:limit]

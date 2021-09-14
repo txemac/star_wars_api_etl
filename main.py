@@ -14,3 +14,10 @@ characters_sorted_by_appearances = start_wars_api.sort_characters_by_appearances
     limit=10,
 )
 print(f"Step 1: Finish. Winner: {characters_sorted_by_appearances[0].name}")
+
+print("Step 2: Sort those ten characters by height in descending order (i.e., tallest first) -> Starting...")
+characters_sorted_by_height = start_wars_api.sort_characters_taller(
+    characters=characters_sorted_by_appearances,
+    limit=10,
+)
+print(f"Step 2: Finish. Taller between most appearances: {characters_sorted_by_height[0].name}")
