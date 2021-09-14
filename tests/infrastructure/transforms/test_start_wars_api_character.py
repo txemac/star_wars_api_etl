@@ -1,7 +1,7 @@
 from typing import Dict
 
-from domain.character import Character
-from infrastructure.transforms.start_wars_api_character_transform import StartWarsAPICharacterTransform
+from src.domain.character import Character
+from src.infrastructure.transforms.start_wars_api_character_transform import StartWarsAPICharacterTransform
 from tests.utils import assert_dicts
 
 

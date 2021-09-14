@@ -1,8 +1,8 @@
 from typing import Dict
 from typing import Optional
 
-from domain.character import Character
-from domain.transform import Transform
+from src.domain.character import Character
+from src.domain.transform import Transform
 
 
 class StartWarsAPICharacterTransform(Transform):
