@@ -2,7 +2,7 @@ from typing import Dict
 
 from domain.character import Character
 from infrastructure.transforms.start_wars_api_character_transform import StartWarsAPICharacterTransform
-from utils import assert_dicts
+from tests.utils import assert_dicts
 
 
 def test_transform(
