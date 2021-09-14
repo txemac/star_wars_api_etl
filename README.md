@@ -1,4 +1,4 @@
-# Start Wars API ETL
+# Star Wars API ETL
 
 Task using the Star Wars API (swapi)
 
